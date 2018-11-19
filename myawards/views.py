@@ -1,16 +1,16 @@
-# from django.shortcuts import render,redirect
-# from django.http  import HttpResponse,Http404
-# from .models import Project,Profile
-# from django.core.exceptions import ObjectDoesNotExist
-# from django.contrib.auth.decorators import login_required
-# from .forms import ProjectForm,ProfileForm
+from django.shortcuts import render,redirect
+from django.http  import HttpResponse,Http404
+from .models import Project,Profile
+from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.auth.decorators import login_required
+from .forms import ProjectForm,ProfileForm
 
-# # Create your views here.
-# @login_required(login_url='/accounts/login/')
-# def index(request):
-#     current_user = request.user
-#     projects = Project.get_all()
-#     return render(request,'index.html',{'projects':projects})
+# Create your views here.
+@login_required(login_url='/accounts/login/')
+def index(request):
+    current_user = request.user
+    projects = Project.get_all()
+    return render(request,'index.html',{'projects':projects})
 
 # def project(request,project_id):
 #     try:
