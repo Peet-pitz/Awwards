@@ -11,11 +11,11 @@ class Project(models.Model):
     link = models.TextField(validators=[URLValidator()],null=True)
     profile = models.ForeignKey(User,on_delete=models.CASCADE, null=True)
 
-#     def save_project(self):
-#         self.save()
+    def save_project(self):
+        self.save()
 
-#     def delete_project(self):
-#         self.delete()
+    def delete_project(self):
+        self.delete()
 
 #     @classmethod
 #     def get_all(cls):
