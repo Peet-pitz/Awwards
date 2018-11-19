@@ -32,11 +32,11 @@ class Project(models.Model):
         projects_title = cls.objects.filter(title__icontains=search_term)
         return projects_title
 
-# class Profile(models.Model):
-#     photo = models.ImageField(upload_to = 'profile/')
-#     profile = models.ForeignKey(User,on_delete=models.CASCADE,null = True)
-#     bio = models.TextField(max_length = 100)
-#     contact = models.IntegerField()
+class Profile(models.Model):
+    photo = models.ImageField(upload_to = 'profile/')
+    profile = models.ForeignKey(User,on_delete=models.CASCADE,null = True)
+    bio = models.TextField(max_length = 100)
+    contact = models.IntegerField()
 
 #     def save_profile(self):
 #         self.save()
