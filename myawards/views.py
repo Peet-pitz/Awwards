@@ -48,18 +48,18 @@ def profile(request):
     #     return redirect('create-profile')
     return render(request, 'profile.html',{'projects':projects,'profile':profile})
 
-# def create_profile(request):
-#     current_user = request.user
-#     if request.method == 'POST':
-#         form = ProfileForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             profile = form.save(commit = False)
-#             profile.project = current_user
-#             profile.save()
-#         return redirect('Profile')
-#     else:
-#         form = ProfileForm()
-#     return render(request,'create_profile.html',{'form':form})
+def create_profile(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES)
+        if form.is_valid():
+            profile = form.save(commit = False)
+            profile.project = current_user
+            profile.save()
+        return redirect('Profile')
+    else:
+        form = ProfileForm()
+    return render(request,'create_profile.html',{'form':form})
 
 # def search_results(request):
 
