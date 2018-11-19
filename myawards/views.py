@@ -34,19 +34,19 @@ def new_project(request):
         form = ProjectForm()
     return render(request, 'new_project.html', {"form": form})
 
-# def profile(request):
-#     current_user = request.user
-#     projects = Project.objects.filter(profile=current_user)
+def profile(request):
+    current_user = request.user
+    projects = Project.objects.filter(profile=current_user)
 
-#     print(current_user)
+    print(current_user)
 
 
-#     #
-#     # try:
-#     #     profile = Profile.objects.get(profile = current_user)
-#     # except ObjectDoesNotExist:
-#     #     return redirect('create-profile')
-#     return render(request, 'profile.html',{'projects':projects,'profile':profile})
+    #
+    # try:
+    #     profile = Profile.objects.get(profile = current_user)
+    # except ObjectDoesNotExist:
+    #     return redirect('create-profile')
+    return render(request, 'profile.html',{'projects':projects,'profile':profile})
 
 # def create_profile(request):
 #     current_user = request.user
