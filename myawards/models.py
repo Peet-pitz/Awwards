@@ -1,15 +1,15 @@
-# from django.db import models
-# from django.core.validators import URLValidator
-# from django.contrib.auth.models import User
-# from tinymce.models import HTMLField
+from django.db import models
+from django.core.validators import URLValidator
+from django.contrib.auth.models import User
+from tinymce.models import HTMLField
 
-# # Create your models here.
-# class Project(models.Model):
-#     title = models.CharField(max_length = 50)
-#     image = models.ImageField(upload_to = 'projects/')
-#     description = models.TextField(max_length = 500)
-#     link = models.TextField(validators=[URLValidator()],null=True)
-#     profile = models.ForeignKey(User,on_delete=models.CASCADE, null=True)
+# Create your models here.
+class Project(models.Model):
+    title = models.CharField(max_length = 50)
+    image = models.ImageField(upload_to = 'projects/')
+    description = models.TextField(max_length = 500)
+    link = models.TextField(validators=[URLValidator()],null=True)
+    profile = models.ForeignKey(User,on_delete=models.CASCADE, null=True)
 
 #     def save_project(self):
 #         self.save()
