@@ -75,6 +75,7 @@ INSTALLED_APPS = [
     'myawards',
     'bootstrap3',
     'tinymce',
+    'rest_framework',
     
 ]
 
